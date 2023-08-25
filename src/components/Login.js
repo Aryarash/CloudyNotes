@@ -46,7 +46,7 @@ const Login = (props) => {
                 </div>
                 <div className="mb-3">
                     <label htmlFor="password" className="form-label">Password</label>
-                    <input type="password" className="form-control" value={credentials.password} onChange={onChange} name="password" placeholder='minimum password length should be 8 characters' id="password" />
+                    <input type="password" className="form-control" value={credentials.password} onChange={onChange} name="password" placeholder='password length should be minimum of 8 characters' id="password" />
                 </div>
 
                 <button type="submit" className="btn btn-primary">Submit</button>

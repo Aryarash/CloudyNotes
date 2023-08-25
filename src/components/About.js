@@ -1,11 +1,16 @@
 import React , {useContext} from 'react';
-
+import cloudy from './clipart-cloud-1.png' 
 
 const About = () => {
   
   return (
-    <div className='container m-auto'>
-      <p>This </p>
+    <div>
+      <div className='container mx-auto bg-'>
+        <img src={cloudy} style={{width:'60%',marginLeft:'20%'}}></img>
+        <div className="container mt-5">
+          <p style={{fontSize:'120%',fontFamily:'fantasy'}}>This is a Web Application where you can store your notes , edit your notes and delete your notes. You will be the complete owner of your notes and no one else can access your notes. Enjoy this application by storing your important notes.</p>
+        </div>
+      </div>
     </div>
   );
 };
