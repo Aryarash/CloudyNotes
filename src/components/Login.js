@@ -12,7 +12,9 @@ const Login = (props) => {
 
     const [credentials, setCredentials] = useState({email: "", password: ""}) 
     let history = useHistory();
-
+    if(localStorage.getItem('token')){
+        history.push('/');
+    }
     const handleSubmit = async (e) => {
         e.preventDefault();
         const response = await fetch(`${host}/api/auth/login`, {
@@ -51,7 +53,7 @@ const Login = (props) => {
                     <input type="password" className="form-control" value={credentials.password} onChange={onChange} name="password" placeholder='minimum of 8 characters' id="password" />
                 </div>
 
-                <button type="submit" className="btn btn-primary">Submit</button>
+                <button disabled={credentials.password.length<8} type="submit" className="btn btn-primary">Submit</button>
             </form>
             <img src={loginimg} style={{width:'60%',marginLeft:'20%'}} alt=''></img>
         </div>

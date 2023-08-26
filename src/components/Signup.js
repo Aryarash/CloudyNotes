@@ -11,6 +11,9 @@ const Signup = (props) => {
 
     const [credentials, setCredentials] = useState({name:"",email: "", password: "",cpassword:""});
     let history = useHistory();
+    if(localStorage.getItem('token')){
+        history.push('/');
+    }
     const handleSubmit = async (e) => {
         e.preventDefault();
         if(credentials.cpassword!==credentials.password){
@@ -61,7 +64,7 @@ const Signup = (props) => {
                     <label htmlFor="password" className="form-label">Confirm Password</label>
                     <input type="password" className="form-control " value={credentials.cpassword} onChange={onChange} name="cpassword" id="cpassword" placeholder='minimum of 8 characters'/>
                 </div>
-                <button type="submit" className="btn btn-primary">Submit</button>
+                <button disabled={credentials.password.length<8 || credentials.cpassword.length<8} type="submit" className="btn btn-primary">Submit</button>
             </form>
             <img src={signupimg}  style={{width:'60%',marginLeft:'20%'}} alt=''/>
         </div>
