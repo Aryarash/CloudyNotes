@@ -6,12 +6,13 @@ import noteContext from '../context/noteContext';
 const Navbar = () => {
 
     const context = useContext(noteContext);
-    const {showAlert} = context ;
+    const {showAlert , user} = context ;
 
 
     let location = useLocation();
     let history = useHistory();
 
+    
     const handlelogout = ()=>{
         localStorage.removeItem('token');
         history.push('/login')
@@ -38,7 +39,8 @@ const Navbar = () => {
                     <form className="d-flex">
                         <Link className="btn btn-primary mx-1" to="/login" role="button">Login</Link>
                         <Link className="btn btn-primary mx-1" to="/signup" role="button">Signup</Link>
-                    </form>:<button className='btn btn-primary' onClick={handlelogout}>Logout</button>}
+                        
+                    </form>:<form className='d-flex'><Link className="navbar-brand" to="#">{`Username : ${user.name}`}</Link><button className='btn btn-primary' onClick={handlelogout}>Logout</button></form>}
                 </div>
             </div>
         </nav>

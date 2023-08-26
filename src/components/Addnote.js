@@ -22,11 +22,11 @@ const AddNote = () => {
             <form className="my-3">
                 <div className="mb-3">
                     <label htmlFor="title" className="form-label">Title</label>
-                    <input type="text" className="form-control" id="title" name="title" aria-describedby="emailHelp" value={note.title} placeholder='minnimum characters 5' onChange={onChange} minLength={5} required /> 
+                    <input type="text" className="form-control" id="title" name="title" aria-describedby="emailHelp" value={note.title} placeholder='minimum of 5 characters' onChange={onChange} minLength={5} required /> 
                 </div>
                 <div className="mb-3">
                     <label htmlFor="description" className="form-label">Description</label>
-                    <input type="text" className="form-control" id="description" name="description" value={note.description} placeholder='minnimum characters 5' onChange={onChange} minLength={5} required />
+                    <input type="text" className="form-control" id="description" name="description" value={note.description} placeholder='minimum of 5 characters' onChange={onChange} minLength={5} required />
                 </div>
                 <div className="mb-3">
                     <label htmlFor="tag" className="form-label">Tag</label>

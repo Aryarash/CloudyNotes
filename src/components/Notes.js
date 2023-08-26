@@ -7,13 +7,14 @@ import AddNote from './Addnote';
 const Notes = (props) => {
     
     const context = useContext(noteContext);
-    const { notes, getNotes, editNote } = context;
+    const { notes, getNotes, editNote , getuser} = context;
     let history = useHistory();
 
 
     useEffect(() => {
         if(localStorage.getItem('token')){
             getNotes();
+            getuser();
         }
         else{
             history.push('/login');
